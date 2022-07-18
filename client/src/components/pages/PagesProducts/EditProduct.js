@@ -1,6 +1,7 @@
 import React from 'react'
 import  { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,  Form, FormGroup, Label, Input } from 'reactstrap';
+import Swal from 'sweetalert2';
 import {useDispatch,useSelector} from 'react-redux';
 import { editProduct } from '../../../Redux/actions/ProductAction';
 
@@ -28,6 +29,16 @@ const toggle=()=>{
 const edit=()=>{
     const editedPort = {name,imgUrl,price,category}
     dispatch(editProduct(product._id,editedPort));
+
+    // Sweet Alert
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your Product has been modified',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
     toggle();
 }
 const user = useSelector((state) =>state.authReducer.user);

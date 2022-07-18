@@ -43,7 +43,7 @@ const RegisterModal = () => {
   };
 
   return (
-    <div>
+    <div style={{marginRight: "20px"}}>
       <NavLink className="btn btn-primary text-white" onClick={toggle} href="#">
         Register
       </NavLink>

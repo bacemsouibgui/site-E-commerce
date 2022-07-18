@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import {useDispatch} from 'react-redux';
 import {Redirect} from 'react-router-dom'
 import { addCategory } from '../../../Redux/actions/CategoryAction';
+import Swal from 'sweetalert2';
 
 function AddCategory() {
     
@@ -12,7 +13,16 @@ function AddCategory() {
     const [Cancel, setCancel] = useState(false);
     const dispatch = useDispatch();
 const add=()=>{
-    dispatch(addCategory({name,imgUrl,description}))
+    dispatch(addCategory({name,imgUrl,description}));
+
+        // Sweet Alert
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+       title: 'You added a new Category',
+       showConfirmButton: false,
+       timer: 1500
+})
     setCancel(!Cancel)
 };
     return (

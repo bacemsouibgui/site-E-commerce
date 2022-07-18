@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { Card, Button, CardTitle, CardText, CardImg} from 'reactstrap';
 import {useDispatch} from 'react-redux';
 import { addPanier } from '../../../Redux/actions/PanierActions';
+import Swal from 'sweetalert2';
 
 
 
@@ -9,7 +10,15 @@ const Cardproduct=({product})=> {
     const [quantity, setQantity] = useState(1);
     const dispatch = useDispatch()
     const add = ()=>{
-        alert ('your product added to panier');
+
+        // Sweet Alert
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your product was added to panier',
+            showConfirmButton: false,
+            timer: 1500
+          })
         const newPanier={
             product:product._id,
             quantity}

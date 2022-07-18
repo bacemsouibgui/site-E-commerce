@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const isAuth = require('../Middlewares/isAuth');
 const Panier = require('../models/Panier')
+const Product = require('../models/Product');
 
 router.post('/', isAuth, async (req, res) => {
     const user = req.user.id;
@@ -73,5 +74,6 @@ router.delete('/delete/:id', isAuth, async (req, res) => {
         res.json({ msg: "error" });
     }
 })
+
 
 module.exports = router;

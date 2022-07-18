@@ -3,6 +3,9 @@ import {useSelector,useDispatch} from 'react-redux';
 import { getPanier } from '../../Redux/actions/PanierActions';
 import {deletepanier} from '../../Redux/actions/PanierActions';
 import { Table} from 'react-bootstrap';
+import Swal from 'sweetalert2';
+
+
 const Panier = () => {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -15,7 +18,24 @@ const Panier = () => {
     const delette = (idpanier)=>{  
       
         dispatch(deletepanier(idpanier)) ;
-        alert ('Your purchase is canceled')
+        // Sweet Alert
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Your purchase is Canceled!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Deleted!',
+                'Your basket has been deleted.',
+                'success'
+              )
+            }
+          })
 
     }
 
@@ -43,12 +63,18 @@ const Panier = () => {
             }
 
             <div className='container m-4'style={{display:"flex",flexDirection:"row",justifyContent:'space-between', alignItems:'center'}}>
-            <span className='btn btn-success' onClick={()=>alert('Your Order is Succesful')}>Pay</span>
+            <span className='btn btn-success' onClick={()=>Swal.fire({
+                                                              position: 'top-end',
+                                                              icon: 'success',
+                                                             title: 'Your order is successfull',
+                                                             showConfirmButton: false,
+                                                             timer: 1500
+})
+}>Pay</span>
             <th className='btn btn-danger'onClick={()=>delette(panier._id)}>Clear the basket</th>
             </div>
            
         </div>
-// montant total du panier
 
     )
 }

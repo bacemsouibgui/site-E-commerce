@@ -13,7 +13,7 @@ function NavBar() {
     return (
     
 <div className='container mt-2'>
-    <ul style={{listStyle:'none',display:'flex',flexDirection:"row", justifyContent:'space-around'}}>
+    <ul style={{listStyle:'none',display:'flex',flexDirection:"row", justifyContent:'space-around', paddingTop: "30px"}}>
         {categorys && categorys.map(category => <Link to={`/category/${category._id}`} className="btn btn-secondary border-0"><li key={category._id}>{category.name}</li></Link>)}
         <Link to='/product' className="btn btn-secondary border-0"><li>All Products</li></Link>
     </ul>

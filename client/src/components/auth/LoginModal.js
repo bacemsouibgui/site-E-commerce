@@ -37,7 +37,7 @@ const LoginModal = () => {
   };
 
   return (
-    <div>
+    <div style={{marginRight: "300px", marginBottom: "200px", marginLeft: "500px"}}>
       <NavLink className="btn btn-success text-white" onClick={toggle} href="#">
         Login
       </NavLink>

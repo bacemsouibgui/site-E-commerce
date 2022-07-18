@@ -13,7 +13,8 @@ import {
 import LoginModal from './auth/LoginModal';
 import RegisterModal from './auth/RegisterModal';
 import { logout } from '../Redux/actions/authAction';
-import './style.css'
+import './style.css';
+import Image from './log.png';
 
 const AppNavBar = () => {
   const dispatch = useDispatch();
@@ -71,7 +72,7 @@ const AppNavBar = () => {
   return (
     <div>
       <Navbar expand="sm" >
-        <NavbarBrand href="/"><img id='imgnav' src="https://www.entreprises-magazine.com/wp-content/uploads/2018/08/E-Commerce.png"></img></NavbarBrand>
+      <NavbarBrand href="/"><img id='imgnav' src={Image}alt=""/></NavbarBrand>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             {isAuth ? authLinks : guestLinks}

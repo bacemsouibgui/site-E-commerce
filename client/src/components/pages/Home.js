@@ -6,16 +6,17 @@ import './styles.css'
 
 function Home() {
   return (
-    <>
+    <div id='home'>
+    <a href='#contact' style={{marginLeft: "1200px"}}> Contact us</a>
       < ListCollection />
       <div>
-        <img style={{ width: '90%', height: '300px', margin: '20px', borderRadius: '5px' }}
-          src="https://www.dhresource.com/0x0/f2/albu/g1/M00/A1/43/rBVaGVoeZ9qAKTjjAADQ8PcaYIM686.jpg"></img>
+        <img style={{ width: '95%', height: '350px', margin: '20px', borderRadius: '5px' }}
+          src="https://img.freepik.com/premium-photo/open-sign-board-with-white-text-black-vintage-wooden-sign-welcome-we-are-open-please-come-hanging-glass-door-cafe-coffee-shop-store-restaurant_36367-3285.jpg?w=2000"></img>
 
 
         <div style={{ margin: '20px', flexWrap: "colum", display: "flex" }}>
-          <img style={{ width: '95%', height: '400px', margin: '20px' }}
-            src="https://dos.ny.gov/sites/g/files/oee926/files/media/2021/11/shopping.jpg"></img>
+          <img style={{ width: '95%', height: '450px', margin: '20px' }}
+            src="https://bsmedia.business-standard.com/_media/bs/img/article/2022-04/07/full/1649276125-6488.jpg?im=Resize,width=480"></img>
         </div>
 
         <h3 style={{ textAlign: "center", color: "#2217D5", fontFamily: "Lucida Console", padding: '5px' }}>We are your best choice </h3>
@@ -29,11 +30,11 @@ function Home() {
 
 
         <div className="img-con">
-  <h5>Contact us</h5>
+  <div id='contact'>
 
   <a href="https://www.facebook.com/" target="-blank">
     <img
-      src="https://pic.clubic.com/v1/images/1727832/raw?width=1200&fit=max&hash=fe2737bb5364336a95fe4f869a4ec48f27c7c724"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiC2hq09ZZ9S1nvwHKUNTPDT_uVg6y8v0bJQ&usqp=CAU"
       alt=""
     />
   </a>
@@ -55,6 +56,7 @@ function Home() {
       alt=""
     />
   </a>
+  </div>
 </div>
 
 
@@ -66,7 +68,7 @@ function Home() {
   </div>
         </footer>
       </div>
-    </>)
+    </div>)
 }
 
 export default Home;

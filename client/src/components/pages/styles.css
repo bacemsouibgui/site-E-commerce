@@ -1,12 +1,7 @@
-h5{
-    color: red;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
 
-}
 .img-con img{
-    height: 80px;
-    width: 60px;
+    height: 60px;
+    width: 80px;
     margin: 30px 20px;
     
  }
@@ -33,3 +28,21 @@ h5{
    margin-left: auto;
    margin-right: auto;
 }
+
+#home {
+background-image: url('./back.JPG');
+}
+
+a{
+    text-align: center;
+    font-size: x-large;
+    text-decoration: none;
+    color: red;
+
+ }
+ a:hover{
+     color: green;
+ }
+ a:active{
+     color: blue;
+ }

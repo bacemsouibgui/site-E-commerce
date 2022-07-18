@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
+import Swal from 'sweetalert2';
 import {useDispatch} from 'react-redux';
 import { addProduct } from '../../../Redux/actions/ProductAction';
 
@@ -15,7 +15,17 @@ function AddProduct({categorys}) {
 
     const dispatch = useDispatch();
 const add=()=>{
-    dispatch(addProduct({name,imgUrl,price,category}))
+    dispatch(addProduct({name,imgUrl,price,category}));
+
+    // Sweet Alert
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+     title: 'You added a new product',
+     showConfirmButton: false,
+     timer: 1500
+})
+
     toggle()
     setName('');
     setImgUrl('');
@@ -30,8 +40,7 @@ const add=()=>{
       <Modal isOpen={modal} toggle={toggle} className="">
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-        <Form 
-        >
+        <Form >
         <FormGroup >
                     <Label for="name">Name</Label>
                     <Input 
